@@ -1,5 +1,4 @@
-from email.policy import default
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -16,9 +15,12 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
-@app.route("/")
+@app.route("/", methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        pass
+    else:
+        return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

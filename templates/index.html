@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<title>Task Master</title>
 {% endblock head %}
 
 {% block body %}
-<h1></h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Added</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="">Delete</a>
+                    <br>
+                    <a href="">Update</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <input type="text" name="content" id="content">
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </div>
+    </form>
+</div>
 {% endblock body %}
